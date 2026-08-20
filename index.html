@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midnight Gilt | Culinary Mastery Defined</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e2e2e2",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-high": "#282a2b",
+                    "surface-container-low": "#1a1c1c",
+                    "on-primary": "#3c2f00",
+                    "surface-container": "#1e2020",
+                    "surface": "#121414",
+                    "surface-tint": "#e9c349",
+                    "tertiary-container": "#b5b2b2",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "inverse-on-surface": "#2f3131",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#c8c6c5",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#d0cecd",
+                    "error": "#ffb4ab",
+                    "outline": "#99907c",
+                    "on-primary-fixed": "#241a00",
+                    "on-secondary": "#313030",
+                    "on-primary-container": "#554300",
+                    "surface-bright": "#38393a",
+                    "surface-dim": "#121414",
+                    "surface-variant": "#333535",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary-container": "#464545",
+                    "tertiary-fixed": "#e5e2e1",
+                    "primary": "#f2ca50",
+                    "inverse-surface": "#e2e2e2",
+                    "secondary-container": "#474746",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "on-surface-variant": "#d0c5af",
+                    "on-tertiary": "#313030",
+                    "on-secondary-container": "#b7b5b4",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-highest": "#333535",
+                    "primary-container": "#d4af37",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#4d4635",
+                    "background": "#121414",
+                    "inverse-primary": "#735c00",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#e9c349",
+                    "primary-fixed": "#ffe088"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "section-gap": "128px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Montserrat"],
+                    "label-md": ["Montserrat"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-display": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Montserrat"],
+                    "headline-sm": ["Playfair Display"],
+                    "label-sm": ["Montserrat"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .dotted-leader {
+            flex-grow: 1;
+            border-bottom: 1px dotted #99907c;
+            margin: 0 8px 5px;
+        }
+
+        .menu-leader { flex-grow: 1; border-bottom: 1px dotted #4d4635; margin: 0 12px; position: relative; bottom: 4px; }
+
+        .image-reveal {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+        .image-reveal:hover {
+            transform: scale(1.03);
+            filter: grayscale(0%);
+        }
+
+        .gold-shadow {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 5px 15px rgba(212, 175, 55, 0.05);
+        }
+
+        .input-gilded {
+            background-color: #1A1A1C;
+            border: none;
+            border-bottom: 1px solid #99907c;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-gilded:focus {
+            outline: none;
+            border-bottom: 2px solid #f2ca50;
+            box-shadow: none;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+
+        .gold-tint-shadow { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 5px 15px rgba(212, 175, 55, 0.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary font-body-md overflow-x-hidden">
+<!-- 1. Top Navigation -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent" id="top-nav">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm tracking-widest text-primary">MIDNIGHT GILT</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface font-label-md transition-colors duration-300 hover:text-primary" href="#home">Home</a>
+<a class="text-on-surface font-label-md transition-colors duration-300 hover:text-primary" href="#heritage">About</a>
+<a class="text-on-surface font-label-md transition-colors duration-300 hover:text-primary" href="#menu">Menu</a>
+<a class="text-on-surface font-label-md transition-colors duration-300 hover:text-primary" href="#reservations">Reservation</a>
+<a class="text-on-surface font-label-md transition-colors duration-300 hover:text-primary" href="#contact">Contact</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md font-bold gold-glow transition-all active:scale-95" href="#reservations">
+            Book a Table
+        </a>
+</div>
+</nav>
+<!-- 2. Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center brightness-[0.4]" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtltPJKgCLmNkzcIRpY1vxT3vyDSFhK8GZkIN8UZlmWIEOBoYC2daUOshA6eDE-gRmtRflVC7n56JbwaL5zBKdCB1yE0L1JvnRiTaMVISXet4sFLXHCVqP3ET6GJWu3ObeUxz6SQhX6KMJB-l5ARC5DjjUAuHjZxwqKkNCQ4i_Rxcjxda5W8pYqkERswso7MFv-dLTzWZNU5K8uhFRnbTgabZlktzgrEKOXIWmU0g7835xEVsWBIpYSst8')"></div>
+</div>
+<div class="relative z-10 text-center max-w-3xl px-margin-mobile">
+<h1 class="font-headline-display text-headline-display mb-6 animate-fade-in text-on-surface">The Best Food Experience</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 animate-fade-in delay-100">
+            Where culinary mastery meets an atmosphere of refined elegance. Experience the art of the perfect sear.
+        </p>
+<div class="animate-fade-in delay-200">
+<a class="bg-primary text-on-primary font-bold py-4 px-10 rounded-full font-label-md text-label-md tracking-widest hover:scale-105 transition-transform gold-glow inline-block" href="#reservations">
+                BOOK A TABLE
+            </a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center opacity-60">
+<span class="font-label-sm text-label-sm mb-2 uppercase tracking-tighter">Scroll</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- 3. Heritage/About Section -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center overflow-hidden" id="heritage">
+<div class="animate-fade-in">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2 uppercase tracking-widest">Our Heritage</h2>
+<h3 class="font-headline-lg text-headline-lg mb-8 leading-tight">Crafting Excellence Since the First Sizzle</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+            At L'Elite Steakhouse, we believe that dining is not merely a transaction, but a theatrical performance. Our journey began with a single vision: to source the finest wagyu and prime cuts globally and present them in a space that celebrates the quiet confidence of classic luxury.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">
+            Every steak is dry-aged to perfection in our custom-built chambers, then kissed by an open flame to achieve a crust that tells a story of patience and precision.
+        </p>
+<a class="text-primary font-label-md text-label-md border-b border-primary pb-1 hover:opacity-80 transition-opacity" href="#">LEARN OUR STORY</a>
+</div>
+<div class="relative group animate-fade-in delay-200">
+<div class="absolute -inset-4 border border-outline-variant translate-x-8 translate-y-8 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700"></div>
+<div class="w-full aspect-[4/5] bg-cover bg-center rounded-lg shadow-2xl image-reveal" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB221sg1hDLB9i-FGPdHUMjiS2Ma5pF7gFY4tzkZBmblN3S8WotSAfMQSPptEZVYfl9pZ4xVCoz5Uz3naeCeGdoSOONCEFCeiE_gikhPmaPaalguCMrOa_aQJtMKYYiZKRvzmKY0etUhFS2ptgWUmU1vRPq7GZcONvaqTGRGP6wrw2LNcj_wfjpCevuOAxWBQLcLEPBua57KJIU2SAIDcoSxrDUI2qkbrHPGj52hr1dQQFW8yLOpcRk')"></div>
+</div>
+</section>
+<!-- 4. Chef's Masterpieces -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4 uppercase tracking-widest">Selected for You</h2>
+<h3 class="font-headline-lg text-headline-lg">Chef's Masterpieces</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Dish 1 -->
+<div class="bg-surface-container border border-transparent hover:border-outline-variant p-6 rounded-xl transition-all duration-500 group animate-fade-in">
+<div class="overflow-hidden rounded-lg mb-6 aspect-square">
+<img alt="Wagyu Gold" class="w-full h-full object-cover image-reveal" src="https://lh3.googleusercontent.com/aida/AP1WRLsDTbPvKu6NugLAQFj8-mzKFnwfQ7_oktYYgoZJTByJXc7YW_il4nBJ5f0ICI78gd247HQcr4U85KKnvj6r6ZS3z9-Dp2GRfJXJj6kGfMnkpj2RqQ6BRp7e8yIPhEyZKZBnghwdFG2pjrbniYA26_UpSgcX7aNg_i2-Yg2Y3e8GljjVG5R3f9XxYK7TdLRQjhCabSTI70PgeNL02ft5MhuXheq24lFj1z-sTQ4NGHFpIU2qxUm75DOUi9k"/>
+</div>
+<div class="flex items-end justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Wagyu Gold</h4>
+<div class="dotted-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">$125</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A5 Grade Miyazaki wagyu, truffle emulsion, charred leeks.</p>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 border border-primary/30 rounded-full text-[10px] uppercase font-bold text-primary">Pairing: Cabernet</span>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="bg-surface-container border border-primary p-6 rounded-xl transition-all duration-500 group animate-fade-in delay-100">
+<div class="overflow-hidden rounded-lg mb-6 aspect-square">
+<img alt="Ocean Symphony" class="w-full h-full object-cover image-reveal" src="https://lh3.googleusercontent.com/aida/AP1WRLvy04J8S3Tt2ymyO2Ki42MQ4wRZOAfqdfUCtlNuQ0UyekuzywoS3Xr3NGTdGh4g_G5ErAIaIw09UaeOCHZu6LGHfOhByg7aWUnoZW1AiT8mdASs_cDvmwl9jHw_FSB1QAbQ9w0sPYmb4VQ1SqlZEvoYqHyanObkccRAe9hFEaPMSkc0v75SocuJnAjgXHSFshWICyOx8oyrPqqmagSvYqP41il-uR-WwGcH5Y1a_GpILDyMpA5M6Cqj7Kg"/>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase mb-2 block font-bold">Chef's Favorite</span>
+<div class="flex items-end justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Ocean Symphony</h4>
+<div class="dotted-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">$85</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Sustainable seafood medley, saffron foam, charred citrus.</p>
+</div>
+<!-- Dish 3 -->
+<div class="bg-surface-container border border-transparent hover:border-outline-variant p-6 rounded-xl transition-all duration-500 group animate-fade-in delay-200">
+<div class="overflow-hidden rounded-lg mb-6 aspect-square">
+<div class="w-full h-full bg-cover bg-center image-reveal h-full w-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxvsQ5WHfle2G1yDV9GaDcivxXpLZM0VJw2goM9UpvHPs7tAMyZe6dptQJWDFXRWv9j9UVBVmemtnzPvL_QOs22hof3U7-fDdREkRyCARNL98Mv0zCz3GBKgmnH2E3Nea3CUqvw55P4icGOr14nVGYZ9stRRe51FPEK4y3JiXOugV46Y_K1gwgWRR73Vpoj0LfXMI1g_X_QjCyAiWY4u00b3S5sTOV-MDdfWROeDo83AsURBMT18yQ')"></div>
+</div>
+<div class="flex items-end justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Velvet Rack</h4>
+<div class="dotted-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">$68</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Herb-encrusted lamb, mint gremolata, purple potato purée.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Full Gourmet Menu Collection -->
+<section class="bg-surface-container-lowest" id="menu">
+<!-- Header Section -->
+<div class="pt-32 pb-16 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center">
+<p class="font-label-md text-primary tracking-widest mb-4">L'ELITE STEAKHOUSE</p>
+<h2 class="font-headline-display text-headline-display text-on-surface">The Gourmet Collection</h2>
+<div class="w-24 h-1 bg-primary mx-auto mt-8"></div>
+</div>
+</div>
+<!-- Starters -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop" id="starters">
+<div class="flex flex-col md:flex-row gap-gutter items-center mb-16">
+<div class="w-full md:w-1/3 text-left">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Starters</h3>
+<p class="text-on-surface-variant font-body-md">Begin your journey with our chef's hand-picked selections of appetizers designed to awaken the palate.</p>
+</div>
+<div class="flex-1 w-full grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Bone Marrow</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">24</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Roasted cross-cut veal bone marrow, herb gremolata, sourdough crisps.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Wagyu Tartare</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">32</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Hand-cut A5 Wagyu, quail egg yolk, capers, truffle essence.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Truffle Arancini</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">18</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Wild mushroom risotto balls, black truffle oil, parmesan foam.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Oysters Rockefeller</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">28</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Freshly shucked oysters, spinach, Pernod, buttery herb breadcrumbs.</p>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+</section>
+<!-- Signature Steaks -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop" id="steaks">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="order-2 lg:order-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">Signature Steaks</h3>
+<div class="space-y-10">
+<div class="group relative p-6 bg-surface-container-low border-l-2 border-primary gold-tint-shadow">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Dry-Aged Tomahawk</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">145</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">45-day dry-aged, bone-in ribeye, served with roasted garlic cloves and marrow butter.</p>
+<span class="inline-block px-3 py-1 border border-primary text-primary text-[10px] font-label-md uppercase tracking-widest">Chef's Selection</span>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Filet Mignon (8oz)</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">64</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Center-cut prime, bordelaise sauce, whipped potato puree.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">New York Strip</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">58</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">USDA Prime, well-marbled, seasoned with house secret spice rub.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">A5 Japanese Wagyu</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">185</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Miyazaki prefecture, perfectly marbled, served with fresh wasabi root.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 h-[600px] sticky top-32 overflow-hidden rounded-lg">
+<img alt="Signature Steaks" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsDTbPvKu6NugLAQFj8-mzKFnwfQ7_oktYYgoZJTByJXc7YW_il4nBJ5f0ICI78gd247HQcr4U85KKnvj6r6ZS3z9-Dp2GRfJXJj6kGfMnkpj2RqQ6BRp7e8yIPhEyZKZBnghwdFG2pjrbniYA26_UpSgcX7aNg_i2-Yg2Y3e8GljjVG5R3f9XxYK7TdLRQjhCabSTI70PgeNL02ft5MhuXheq24lFj1z-sTQ4NGHFpIU2qxUm75DOUi9k"/>
+</div>
+</div>
+</section>
+<!-- From the Sea -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop" id="seafood">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="h-[600px] sticky top-32 overflow-hidden rounded-lg">
+<img alt="From the Sea" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvy04J8S3Tt2ymyO2Ki42MQ4wRZOAfqdfUCtlNuQ0UyekuzywoS3Xr3NGTdGh4g_G5ErAIaIw09UaeOCHZu6LGHfOhByg7aWUnoZW1AiT8mdASs_cDvmwl9jHw_FSB1QAbQ9w0sPYmb4VQ1SqlZEvoYqHyanObkccRAe9hFEaPMSkc0v75SocuJnAjgXHSFshWICyOx8oyrPqqmagSvYqP41il-uR-WwGcH5Y1a_GpILDyMpA5M6Cqj7Kg"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">From the Sea</h3>
+<div class="space-y-10">
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Miso Chilean Sea Bass</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">52</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Sake-miso marinated, baby bok choy, ginger-soy reduction.</p>
+</div>
+<div class="group relative p-6 bg-surface-container-low border-l-2 border-primary gold-tint-shadow">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Wild-Caught Lobster</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">85</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">Butter-poached tail, claw meat ravioli, saffron bisque.</p>
+<span class="inline-block px-3 py-1 border border-primary text-primary text-[10px] font-label-md uppercase tracking-widest">Seasonal Special</span>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Pan-Seared Scallops</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">48</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">U-10 Diver scallops, cauliflower silk, crispy pancetta.</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Dover Sole Meunière</h4>
+<div class="menu-leader"></div>
+<span class="font-headline-sm text-headline-sm text-primary">74</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic">Table-side deboning, brown butter, lemon, capers.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Decadent Desserts -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop" id="desserts">
+<div class="bg-surface-container p-12 border border-outline-variant/30 gold-tint-shadow">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">Decadent Desserts</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
+<div class="group">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Midnight Chocolate</h4>
+<p class="font-body-md text-on-surface-variant">70% Dark chocolate mousse, gold leaf, sea salt honeycomb. <span class="text-primary ml-2">16</span></p>
+</div>
+<div class="group">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Grand Marnier Soufflé</h4>
+<p class="font-body-md text-on-surface-variant">Twice-baked, citrus zest, warm vanilla bean creme. <span class="text-primary ml-2">20</span></p>
+</div>
+<div class="group">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Pistachio Baklava</h4>
+<p class="font-body-md text-on-surface-variant">Hand-stretched filo, aromatic honey, rose petal. <span class="text-primary ml-2">14</span></p>
+</div>
+<div class="group">
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Tahitian Vanilla Tart</h4>
+<p class="font-body-md text-on-surface-variant">Shortbread crust, white chocolate ganache, wild berries. <span class="text-primary ml-2">15</span></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<!-- Witness the Artistry (Transition Section) -->
+<section class="relative h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<div class="w-full h-full bg-cover bg-fixed bg-center brightness-[0.3]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnlGT3ECwzYi33sYsXzLodyGKlQ8-MHGsGY3Z7_wlVfckxKgnkp6r4WQhrechvdc79Q9YorzrdlWGqI5PVyxgKaGQwCNkDsGQhkyrEhw1yI6Deh6WLHpDWjJS3txtm4aMtSkT_SZc-rGMus2Ko1JVH471utUFj4BpSecC7CGBTZBtH9Jzibu_ZIQD4KpqLV47kWcEEMz6WGxz2LfbW6uwqIbASieuQ2NNbq7EEuNwYZDJv_SCxNWRD')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-2">
+<div class="animate-fade-in">
+<h2 class="font-headline-lg text-headline-lg mb-6">Witness the Artistry</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">
+                Our open kitchen is a theater of fire and focus. Experience the sensory journey from raw ingredient to culinary masterpiece as our chefs plate your evening with surgical precision.
+            </p>
+<div class="flex flex-col sm:flex-row gap-gutter">
+<button class="bg-primary text-on-primary font-bold py-4 px-8 rounded-lg font-label-md text-label-md tracking-wider gold-glow hover:scale-105 transition-all">
+                    VIEW THE KITCHEN
+                </button>
+<button class="border border-primary text-primary font-bold py-4 px-8 rounded-lg font-label-md text-label-md tracking-wider hover:bg-primary/10 transition-all">
+                    PRIVATE DINING
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Testimonials/Echoes of Excellence -->
+<section class="bg-surface-container-lowest py-section-gap overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Echoes of Excellence</h2>
+</div>
+<div class="flex transition-transform duration-700 ease-in-out" id="testimonial-slider">
+<!-- Slide 1 -->
+<div class="min-w-full px-4 md:px-24">
+<div class="text-center">
+<p class="font-headline-sm text-on-surface italic leading-relaxed mb-8">
+                        "An unrivaled sensory experience. The Wagyu Tartare paired with the 2012 Vintage was transformative. Truly the gold standard of evening dining."
+                    </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-[1px] bg-primary mb-4"></div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em]">Julian Vane</h4>
+<p class="text-label-sm text-on-surface-variant opacity-60">Architectural Critic</p>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="min-w-full px-4 md:px-24">
+<div class="text-center">
+<p class="font-headline-sm text-on-surface italic leading-relaxed mb-8">
+                        "From the moment you step through the heavy brass doors, you are in another world. The service is invisible yet omnipresent. Impeccable."
+                    </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-[1px] bg-primary mb-4"></div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em]">Eleanor Thorne</h4>
+<p class="text-label-sm text-on-surface-variant opacity-60">Vogue Lifestyle</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Slider Controls -->
+<div class="flex justify-center gap-4 mt-12">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all rounded-full group" onclick="moveSlider(-1)">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all rounded-full group" onclick="moveSlider(1)">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 7. Reservations & Contact Section -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto" id="reservations">
+<div class="text-center mb-16">
+<span class="text-primary font-label-md tracking-[0.3em] uppercase mb-4 block">Secure Your Seat</span>
+<h2 class="font-headline-display text-headline-display text-on-surface mb-8">Reservations</h2>
+<p class="max-w-2xl mx-auto font-body-lg text-on-surface-variant italic">
+            Experience culinary artistry in our intimate midnight sanctuary. We recommend booking two weeks in advance for weekend dining.
+        </p>
+</div>
+<div class="bg-surface-container-low p-12 md:p-20 gold-shadow border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 relative z-10">
+<div class="space-y-2">
+<label class="font-label-md text-primary uppercase text-[10px] tracking-widest">Select Date</label>
+<input class="w-full input-gilded py-4 text-on-surface bg-transparent focus:ring-0" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary uppercase text-[10px] tracking-widest">Select Time</label>
+<select class="w-full input-gilded py-4 text-on-surface bg-transparent focus:ring-0">
+<option class="bg-surface">17:00</option>
+<option class="bg-surface">18:30</option>
+<option class="bg-surface">20:00</option>
+<option class="bg-surface">21:30</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary uppercase text-[10px] tracking-widest">Number of Guests</label>
+<input class="w-full input-gilded py-4 text-on-surface bg-transparent focus:ring-0" max="10" min="1" placeholder="2" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary uppercase text-[10px] tracking-widest">Occasion (Optional)</label>
+<select class="w-full input-gilded py-4 text-on-surface bg-transparent focus:ring-0">
+<option class="bg-surface">Anniversary</option>
+<option class="bg-surface">Birthday</option>
+<option class="bg-surface">Business</option>
+<option class="bg-surface">Date Night</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-primary uppercase text-[10px] tracking-widest">Special Requests</label>
+<textarea class="w-full input-gilded py-4 text-on-surface bg-transparent focus:ring-0 resize-none" placeholder="Tell us about allergies or specific seating preferences..." rows="2"></textarea>
+</div>
+<div class="md:col-span-2 flex flex-col items-center pt-8">
+<button class="bg-primary text-on-primary font-label-md py-5 px-16 uppercase tracking-[0.2em] transition-all hover:scale-[1.02] gold-shadow active:scale-95" type="submit">
+                    Confirm Booking
+                </button>
+<p class="mt-4 text-label-sm text-on-surface-variant opacity-60">A confirmation email will be sent immediately upon approval.</p>
+</div>
+</form>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Left: Contact Details -->
+<div class="md:col-span-5 space-y-12">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Hours of Operation</h3>
+<ul class="space-y-4">
+<li class="flex items-center">
+<span class="font-label-md text-on-surface w-32">Monday - Friday</span>
+<span class="dotted-leader"></span>
+<span class="font-body-md text-on-surface-variant">5 PM - 11 PM</span>
+</li>
+<li class="flex items-center">
+<span class="font-label-md text-on-surface w-32">Sat - Sunday</span>
+<span class="dotted-leader"></span>
+<span class="font-body-md text-on-surface-variant">4 PM - 12 AM</span>
+</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary">Get in Touch</h3>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-md text-on-surface">The Gilded Pin</p>
+<p class="font-body-md text-on-surface-variant">888 Obsidian Ave, Central City, NY 10001</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-label-md text-on-surface">Reservations Line</p>
+<p class="font-body-md text-on-surface-variant">+1 (555) 888-GILT</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-label-md text-on-surface">General Inquiries</p>
+<p class="font-body-md text-on-surface-variant">concierge@midnightgilt.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Map Image -->
+<div class="md:col-span-7 h-[500px] relative">
+<div class="absolute inset-0 border border-primary/20 gold-shadow transform translate-x-4 translate-y-4"></div>
+<img alt="Midnight Gilt Map" class="w-full h-full object-cover relative z-10 border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AP1WRLvpLGE1gCr30JPmIf_5KAPvb66w3OX-x-tXGlTFjq2wGtd_WHffMY8Uyif_YSIctU4W2R0w3mYFlg9OHrYMxyq8P4wM0_FC4-UPfvHwPr5OYAbztyYdCi7Ve8qDs0MSQgkRKVs-gLu2QTpzd67wTN7nRLWaIlO4tNiEzbkO2pDrEQBBS294bGI5JxrncwLlY6jBWWN_0b0iYQ0gIdRno23sH3F4K09xgc96QT8PBbLBNP9nemGzqYbJ3MU"/>
+<div class="absolute bottom-12 left-12 z-20 bg-surface-container-low/90 backdrop-blur-md p-6 border border-primary/30">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Central City</h3>
+<p class="font-label-sm text-on-surface uppercase tracking-widest">The Gilded Pin • Est. 1888</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-headline-sm text-headline-sm text-primary">MIDNIGHT GILT</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Defining culinary mastery through a lens of exclusive luxury and timeless taste.
+            </p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-primary uppercase">Quick Links</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all font-label-sm text-label-sm" href="#">Press Kit</a>
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all font-label-sm text-label-sm" href="#">Careers</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-primary uppercase">Contact</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">888 Obsidian Ave, Central City, NY 10001</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">+1 (555) 888-GILT</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">reservations@midnightgilt.com</p>
+</div>
+</div>
+<div class="mt-section-gap text-center px-margin-desktop">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Midnight Gilt. Culinary Mastery Defined.</p>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Scroll Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Navbar interaction on scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('top-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-surface/90', 'backdrop-blur-md', 'shadow-xl');
+            nav.classList.remove('bg-transparent');
+        } else {
+            nav.classList.remove('bg-surface/90', 'backdrop-blur-md', 'shadow-xl');
+            nav.classList.add('bg-transparent');
+        }
+    });
+
+    // Testimonial Slider logic
+    let currentSlide = 0;
+    const slider = document.getElementById('testimonial-slider');
+    const totalSlides = slider ? slider.children.length : 0;
+
+    function moveSlider(direction) {
+        if (!slider) return;
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Form submission simulation
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "Processing...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = "Booking Confirmed";
+                btn.classList.replace('bg-primary', 'bg-green-600');
+                btn.classList.replace('text-on-primary', 'text-white');
+            }, 1500);
+        });
+    }
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body></html>
